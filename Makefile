@@ -13,7 +13,9 @@
 NAME = libasm.a
 
 SRC = main.c \
-	  ft_strlen.c
+	  ft_strlen.c \
+	  ft_tolower.c \
+	  ft_toupper.c
 OBJ = $(SRC:.c=.o)
 
 SRCDIR = src/
