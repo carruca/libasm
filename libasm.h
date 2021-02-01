@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   libasm.h                                           :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: tsierra- <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/02/01 09:43:13 by tsierra-          #+#    #+#             */
+/*   Updated: 2021/02/01 09:44:19 by tsierra-         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #ifndef LIBASM_H
 # define LIBASM_H
 
@@ -6,6 +18,7 @@
 # include <sys/types.h>
 # include <sys/uio.h>
 # include <stdio.h>
+# include <stdlib.h>
 
 size_t	ft_strlen(const char *s);
 char	*ft_strcpy(char *dst, const char *src);
