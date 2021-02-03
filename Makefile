@@ -6,18 +6,20 @@
 #    By: tsierra- <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/02/01 09:44:35 by tsierra-          #+#    #+#              #
-#    Updated: 2021/02/02 18:04:18 by tsierra-         ###   ########.fr        #
+#    Updated: 2021/02/03 16:32:55 by tsierra-         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = libasm.a
 
-SRC = ft_strlen.s
+SRC = ft_strlen.s \
+	  ft_strcpy.s
+
 OBJ = $(SRC:.s=.o)
 
-CFILES = main.c \
-	  ft_tolower.c \
-	  ft_toupper.c
+CSRC = main.c \
+	   ft_tolower.c \
+	   ft_toupper.c
 
 SRCDIR = src/
 OBJDIR = obj/
@@ -30,8 +32,8 @@ MKDIR = mkdir -p
 .PHONY: clean fclean all re
 
 all:
-	$(NASM) $(SRC)
-	$(CC) $(CFILES) $(OBJ)
+	# $(NASM) $(SRC)
+	$(CC) $(CSRC) $(OBJ)
 	
 clean:
 	$(RM) $(OBJ)
