@@ -6,14 +6,15 @@
 #    By: tsierra- <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/02/01 09:44:35 by tsierra-          #+#    #+#              #
-#    Updated: 2021/02/03 16:32:55 by tsierra-         ###   ########.fr        #
+#    Updated: 2021/02/04 15:43:45 by tsierra-         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = libasm.a
 
 SRC = ft_strlen.s \
-	  ft_strcpy.s
+	  ft_strcpy.s \
+	  ft_strcmp.s
 
 OBJ = $(SRC:.s=.o)
 

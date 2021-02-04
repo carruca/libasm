@@ -6,7 +6,7 @@
 /*   By: tsierra- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/01 09:44:58 by tsierra-          #+#    #+#             */
-/*   Updated: 2021/02/03 16:32:09 by tsierra-         ###   ########.fr       */
+/*   Updated: 2021/02/04 16:02:10 by tsierra-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ int	main()
 	char	*line;
 	int		c;
 	char	src[] = "asdfasdfasdfowqowqoueuwqieuq";
-	char	dst[] = "thereosisohissssssssssssssss";
+	char	dst[] = "asdhereosisohissssssssssssssss";
 
 	/*******FT_STRLEN********/
 	line = NULL;
@@ -46,6 +46,22 @@ int	main()
 	char	src2[] = "que hace aqui tio hazte algo";
 	printf("strcpy:		$%s$\n", strcpy(dst, src2));
 	printf("ft_strcpy:	$%s$\n", ft_strcpy(dst, src2));
+
+	/*******FT_STRCMP********/
+	char	linecmp1[] = "holaquetal";
+	char	linecmp2[] = "holaadios";
+	printf("/---------------------/\n");
+	printf("/------FT_STRCMP------/\n");
+	printf("/---------------------/\n");
+	printf("src= %s\n", linecmp1);
+	printf("dst= %s\n", linecmp2);
+	printf("strcmp:		%d\n", strcmp(linecmp1, linecmp2));
+	printf("ft_strcmp:	%d\n", ft_strcmp(linecmp1, linecmp2));
+	char	linecmp3[] = "holaquetal";
+	char	linecmp4[] = "";
+	printf("strcmp:		%d\n", strcmp(linecmp3, linecmp4));
+	printf("ft_strcmp:	%d\n", ft_strcmp(linecmp3, linecmp4));
+
 	/*******FT_TOLOWER*******/
 	c = 0;
 	c = 'C';
