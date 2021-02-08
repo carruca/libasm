@@ -6,7 +6,7 @@
 #    By: tsierra- <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/02/01 09:44:35 by tsierra-          #+#    #+#              #
-#    Updated: 2021/02/04 15:43:45 by tsierra-         ###   ########.fr        #
+#    Updated: 2021/02/08 19:45:07 by tsierra-         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -32,8 +32,10 @@ MKDIR = mkdir -p
 
 .PHONY: clean fclean all re
 
-all:
-	# $(NASM) $(SRC)
+%.o: %.s
+	$(NASM) $<
+
+all: $(OBJ)
 	$(CC) $(CSRC) $(OBJ)
 	
 clean:
