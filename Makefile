@@ -6,7 +6,7 @@
 #    By: tsierra- <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/02/01 09:44:35 by tsierra-          #+#    #+#              #
-#    Updated: 2021/02/08 19:45:07 by tsierra-         ###   ########.fr        #
+#    Updated: 2021/02/09 16:53:09 by tsierra-         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,7 +14,9 @@ NAME = libasm.a
 
 SRC = ft_strlen.s \
 	  ft_strcpy.s \
-	  ft_strcmp.s
+	  ft_strcmp.s \
+	  ft_write.s \
+	  ft_read.s
 
 OBJ = $(SRC:.s=.o)
 
@@ -43,5 +45,6 @@ clean:
 
 fclean: clean
 	$(RM) $(NAME)
+	$(RM) a.out
 
 re: fclean all

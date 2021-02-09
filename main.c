@@ -6,7 +6,7 @@
 /*   By: tsierra- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/01 09:44:58 by tsierra-          #+#    #+#             */
-/*   Updated: 2021/02/04 16:02:10 by tsierra-         ###   ########.fr       */
+/*   Updated: 2021/02/09 17:20:18 by tsierra-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,6 +61,113 @@ int	main()
 	char	linecmp4[] = "";
 	printf("strcmp:		%d\n", strcmp(linecmp3, linecmp4));
 	printf("ft_strcmp:	%d\n", ft_strcmp(linecmp3, linecmp4));
+
+	/*******FT_WRITE********/
+	printf("/---------------------/\n");
+	printf("/------FT_WRITE-------/\n");
+	printf("/---------------------/\n");
+	ssize_t	nbytes;
+	nbytes = 0;
+	printf("***1 - Valid write:***\n");
+	printf("write:\n");
+	nbytes = write(1, "Hola\n", 5);
+	printf("ret = %zd\n", nbytes);
+	nbytes = 0;
+	errno = 0;
+	printf("---------\n");
+	printf("ft_write:\n");
+	nbytes = ft_write(1, "Hola\n", 5);
+	printf("ret = %zd\n", nbytes);
+	printf("***2 - Invalid fd:***\n");
+	nbytes = 0;
+	errno = 0;
+	printf("write:\n");
+	nbytes = write(-1, "Hola\n", 5);
+	printf("ret = %zd\n", nbytes);
+	printf("errno = %d\n", errno);
+	printf("error = %s\n", strerror(errno));
+	nbytes = 0;
+	errno = 0;
+	printf("---------\n");
+	printf("ft_write:\n");
+	nbytes = ft_write(-1, "Hola\n", 5);
+	printf("ret = %zd\n", nbytes);
+	printf("errno = %d\n", errno);
+	printf("error = %s\n", strerror(errno));
+	printf("***3 - Invalid buf:***\n");
+	nbytes = 0;
+	errno = 0;
+	printf("write:\n");
+	nbytes = write(1, NULL, 5);
+	printf("ret = %zd\n", nbytes);
+	printf("errno = %d\n", errno);
+	printf("error = %s\n", strerror(errno));
+	nbytes = 0;
+	errno = 0;
+	printf("---------\n");
+	printf("ft_write:\n");
+	nbytes = ft_write(1, NULL, 5);
+	printf("ret = %zd\n", nbytes);
+	printf("errno = %d\n", errno);
+	printf("error = %s\n", strerror(errno));
+
+	/*******FT_READ********/
+	printf("/---------------------/\n");
+	printf("/-------FT_READ-------/\n");
+	printf("/---------------------/\n");
+	ssize_t	ret;
+	int		fd;
+	char	buf[100] = "";
+	ret = 0;
+	printf("***1 - Valid read:***\n");
+	printf("read:\n");
+	fd = open("ft_strcmp.c", O_RDONLY);
+	ret = read(fd, buf, 10);
+	printf("buf = %s\n", buf);
+	printf("ret = %zd\n", ret);
+	close(fd);
+	printf("---------\n");
+	ret = 0;
+	printf("ft_read:\n");
+	fd = open("ft_strcmp.c", O_RDONLY);
+	ret = ft_read(fd, buf, 10);
+	printf("buf = %s\n", buf);
+	printf("ret = %zd\n", ret);
+	close(fd);
+	errno = 0;
+	printf("***2 - Invalid fd:***\n");
+	printf("read:\n");
+	ret = read(-1, buf, 10);
+	printf("errno = %d\n", errno);
+	printf("error = %s\n", strerror(errno));
+	printf("ret = %zd\n", ret);
+	printf("---------\n");
+	errno = 0;
+	ret = 0;
+	printf("ft_read:\n");
+	ret = ft_read(-1, buf, 10);
+	printf("errno = %d\n", errno);
+	printf("error = %s\n", strerror(errno));
+	printf("ret = %zd\n", ret);
+	errno = 0;
+	printf("***3 - Invalid buf:***\n");
+	printf("read:\n");
+	fd = open("ft_strcmp.c", O_RDONLY);
+	ret = read(fd, NULL, 10);
+	printf("errno = %d\n", errno);
+	printf("error = %s\n", strerror(errno));
+	printf("ret = %zd\n", ret);
+	close(fd);
+	printf("---------\n");
+	errno = 0;
+	ret = 0;
+	printf("ft_read:\n");
+	fd = open("ft_strcmp.c", O_RDONLY);
+	ret = ft_read(fd, NULL, 10);
+	printf("errno = %d\n", errno);
+	printf("error = %s\n", strerror(errno));
+	printf("ret = %zd\n", ret);
+	close(fd);
 
 	/*******FT_TOLOWER*******/
 	c = 0;

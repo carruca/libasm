@@ -6,7 +6,7 @@
 /*   By: tsierra- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/01 09:43:13 by tsierra-          #+#    #+#             */
-/*   Updated: 2021/02/08 18:56:26 by tsierra-         ###   ########.fr       */
+/*   Updated: 2021/02/09 16:50:30 by tsierra-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,8 @@
 # include <stdio.h>
 # include <stdlib.h>
 # include <ctype.h>
+# include <errno.h>
+# include <fcntl.h>
 
 size_t	ft_strlen(const char *s);
 char	*ft_strcpy(char *dst, const char *src);
