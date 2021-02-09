@@ -12,6 +12,8 @@
 
 NAME = libasm.a
 
+EXEC = a.out
+
 SRC = ft_strlen.s \
 	  ft_strcpy.s \
 	  ft_strcmp.s \
@@ -28,23 +30,30 @@ SRCDIR = src/
 OBJDIR = obj/
 
 RM = rm -f
-CC = gcc
+CC = gcc -Wall -Werror -Wextra
+AR = ar rc
 NASM = nasm -f macho64
 MKDIR = mkdir -p
 
-.PHONY: clean fclean all re
+all: $(NAME)
 
 %.o: %.s
 	$(NASM) $<
 
-all: $(OBJ)
-	$(CC) $(CSRC) $(OBJ)
-	
+$(NAME): $(OBJ)
+	$(AR) $(NAME) $^
+
+run: $(NAME)
+	$(CC) $(CSRC) $(NAME) -o $(EXEC)
+	./$(EXEC)
+
 clean:
 	$(RM) $(OBJ)
 
 fclean: clean
 	$(RM) $(NAME)
-	$(RM) a.out
+	$(RM) $(EXEC)
 
 re: fclean all
+
+.PHONY: clean fclean all re run
