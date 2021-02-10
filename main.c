@@ -6,7 +6,7 @@
 /*   By: tsierra- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/01 09:44:58 by tsierra-          #+#    #+#             */
-/*   Updated: 2021/02/10 15:19:48 by tsierra-         ###   ########.fr       */
+/*   Updated: 2021/02/10 16:51:05 by tsierra-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,8 +56,8 @@ int	main()
 	printf("dst= %s\n", linecmp2);
 	printf("strcmp:		%d\n", strcmp(linecmp1, linecmp2));
 	printf("ft_strcmp:	%d\n", ft_strcmp(linecmp1, linecmp2));
-	char	linecmp3[] = "holaquetal";
-	char	linecmp4[] = "";
+	char	linecmp3[] = "bon";
+	char	linecmp4[] = "bon";
 	printf("strcmp:		%d\n", strcmp(linecmp3, linecmp4));
 	printf("ft_strcmp:	%d\n", ft_strcmp(linecmp3, linecmp4));
 
