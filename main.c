@@ -6,7 +6,7 @@
 /*   By: tsierra- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/01 09:44:58 by tsierra-          #+#    #+#             */
-/*   Updated: 2021/02/09 17:20:18 by tsierra-         ###   ########.fr       */
+/*   Updated: 2021/02/10 14:43:21 by tsierra-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -168,6 +168,19 @@ int	main()
 	printf("error = %s\n", strerror(errno));
 	printf("ret = %zd\n", ret);
 	close(fd);
+
+	/*******FT_STRDUP********/
+	printf("/---------------------/\n");
+	printf("/------FT_STRDUP------/\n");
+	printf("/---------------------/\n");
+	char	s1[] = "|abcdfgh|";
+	char	s2[] = "|abcdfgh|";
+	char	*s3 = strdup(s1);
+	char 	*s4 = ft_strdup(s2);
+	printf("strdup:		$%s$\n", s3);
+	printf("ft_strdup:	$%s$\n", s4);
+	free(s3);
+	free(s4);
 
 	/*******FT_TOLOWER*******/
 	c = 0;
