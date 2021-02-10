@@ -6,7 +6,7 @@
 /*   By: tsierra- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/01 09:44:58 by tsierra-          #+#    #+#             */
-/*   Updated: 2021/02/10 14:43:21 by tsierra-         ###   ########.fr       */
+/*   Updated: 2021/02/10 15:19:48 by tsierra-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,6 @@
 int	main()
 {
 	char	*line;
-	int		c;
 	char	src[] = "asdfasdfasdfowqowqoueuwqieuq";
 	char	dst[] = "asdhereosisohissssssssssssssss";
 
@@ -181,25 +180,5 @@ int	main()
 	printf("ft_strdup:	$%s$\n", s4);
 	free(s3);
 	free(s4);
-
-	/*******FT_TOLOWER*******/
-	c = 0;
-	c = 'C';
-	printf("/---------------------/\n");
-	printf("/-----FT_TOLOWER------/\n");
-	printf("/---------------------/\n");
-	printf("c = %c\n", c);
-	printf("tolower: 	%c\n", tolower(c));
-	printf("ft_tolower:	%c\n", ft_tolower(c));
-
-	/*******FT_TOUPPER*******/
-	c = 0;
-	c = 'f';
-	printf("/---------------------/\n");
-	printf("/-----FT_TOLOWER------/\n");
-	printf("/---------------------/\n");
-	printf("c = %c\n", c);
-	printf("toupper: 	%c\n", toupper(c));
-	printf("ft_toupper:	%c\n", ft_toupper(c));
 	return (0);
 }
